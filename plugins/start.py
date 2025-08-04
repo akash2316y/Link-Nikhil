@@ -94,22 +94,13 @@ async def start_command(client: Bot, message: Message):
 
             button_text = "• ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ •" if is_request else "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •"
             button = InlineKeyboardMarkup([[InlineKeyboardButton(button_text, url=invite.invite_link)]])
-
-            
-            
-            await asyncio.sleep(0.5)
-            
-            await wait_msg.delete()
             
             await message.reply_text(
                 "<b><blockquote expandable>ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ! ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ</b>",
                 reply_markup=button,
                 parse_mode=ParseMode.HTML
             )
-
-
-
-
+            
             asyncio.create_task(revoke_invite_after_5_minutes(client, channel_id, invite.invite_link, is_request))
 
         except Exception as e:
