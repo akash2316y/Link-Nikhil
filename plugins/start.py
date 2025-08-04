@@ -125,7 +125,6 @@ async def start_command(client: Bot, message: Message):
         inline_buttons = InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data="about"),
-                 InlineKeyboardButton("ᴄʜᴀɴɴᴇʟs •", callback_data="channels")],
                 [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
             ]
         )
@@ -361,18 +360,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             ]),
         )
 
-    elif data == "channels":
-        user = await client.get_users(OWNER_ID)
-        user_link = f"https://t.me/{user.username}" if user.username else f"tg://openmessage?user_id={OWNER_ID}" 
-        ownername = f"<a href={user_link}>{user.first_name}</a>" if user.first_name else f"<a href={user_link}>no name !</a>"
-        await query.edit_message_media(
-            InputMediaPhoto("https://envs.sh/g.jpg", 
-                            CHANNELS_TXT
-            ),
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='start'), InlineKeyboardButton('ʜᴏᴍᴇ •', callback_data='setting')]
-            ]),
-        )
     elif data in ["start", "home"]:
         inline_buttons = InlineKeyboardMarkup(
             [
