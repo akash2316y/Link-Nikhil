@@ -95,10 +95,7 @@ async def start_command(client: Bot, message: Message):
             button_text = "• ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ •" if is_request else "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •"
             button = InlineKeyboardMarkup([[InlineKeyboardButton(button_text, url=invite.invite_link)]])
 
-            wait_msg = await message.reply_text(
-                "<b>.</b>",
-                parse_mode=ParseMode.HTML
-            )
+            
             
             await asyncio.sleep(0.5)
             
