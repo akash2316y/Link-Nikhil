@@ -4,16 +4,16 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 # Recommended
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "8336940093:AAGyYcaa5zVFsF_i4DocAzziO8YwUJm_csY")
+APP_ID = int(os.environ.get("APP_ID", "423eb062fcc02722ed57bb6b2c35c33f"))
+API_HASH = os.environ.get("API_HASH", "29853748")
 
 # Main
-OWNER_ID = int(os.environ.get("OWNER_ID", "8110231942"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6904414765"))
 PORT = os.environ.get("PORT", "8080")
 
 # Database
-DB_URI = os.environ.get("DB_URI", "")
+DB_URI = os.environ.get("DB_URI", "mongodb+srv://saoravkumar844113:saoravkumar844113@cluster0.mgde5a2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DB_NAME = os.environ.get("DB_NAME", "link")
 
 #Auto approve 
@@ -51,14 +51,14 @@ DATABASE_CHANNEL = int(os.environ.get("DATABASE_CHANNEL", "")) # Channel where u
 
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "7932127170 8110231942").split()):
+    for x in (os.environ.get("ADMINS", "6904414765 8110231942").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
 
 # Admin == OWNER_ID
 ADMINS.append(OWNER_ID)
-ADMINS.append(7932127170)
+ADMINS.append(6904414765)
 
 
 logging.basicConfig(
