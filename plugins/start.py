@@ -122,12 +122,14 @@ async def start_command(client: Bot, message: Message):
             )
             print(f"Decoding error: {e}")
     else:
-        inline_buttons = InlineKeyboardMarkup(
+    inline_buttons = InlineKeyboardMarkup(
+        [
             [
-                [InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data="about"),
-                [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
+                InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data="about"),
+                InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
             ]
-        )
+        ]
+    )
         
         try:
             await message.reply_photo(
