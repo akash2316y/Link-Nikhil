@@ -9,7 +9,7 @@ from helper_func import *
 
 # Default settings
 APPROVAL_WAIT_TIME = 1  # seconds 
-AUTO_APPROVE_ENABLED = True  # Toggle for enabling/disabling auto approval 
+AUTO_APPROVE_ENABLED = False  # Toggle for enabling/disabling auto approval 
 
 async def get_user_client():
     global user_client
