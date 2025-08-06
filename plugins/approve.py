@@ -60,7 +60,7 @@ async def autoapprove(client, message: ChatJoinRequest):
         
         sent_msg = await client.send_photo(
             chat_id=user.id,
-            photo='https://envs.sh/Ej0.jpg',
+            photo='https://graph.org/file/2a3bdf158d2d876c474a1-8566a8ace3bc440d18.jpg',
             caption=caption,
             reply_markup=markup
         )
